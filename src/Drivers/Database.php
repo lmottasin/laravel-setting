@@ -174,8 +174,8 @@ class Database extends Driver
         $delete_keys = [];
 
         foreach ($db_data as $db_row) {
-            $key = $db_row->key;
-            $value = $db_row->value;
+            $key = $db_row->{$this->key};
+            $value = $db_row->{$this->value};
 
             $is_in_insert = $is_different_in_db = $is_same_as_fallback = false;
 
