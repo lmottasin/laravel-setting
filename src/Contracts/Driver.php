@@ -82,6 +82,19 @@ abstract class Driver
     }
 
     /**
+     * Check if the given value is same as fallback.
+     *
+     * @param string $key
+     * @param string $value
+     *
+     * @return bool
+     */
+    public function isEqualToFallback($key, $value)
+    {
+        return (string) $this->getFallback($key) == (string) $value;
+    }
+
+    /**
      * Determine if a key exists in the settings data.
      *
      * @param string $key
