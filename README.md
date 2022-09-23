@@ -2,7 +2,6 @@
 
 [![Downloads](https://poser.pugx.org/akaunting/laravel-setting/d/total.svg)](https://github.com/akaunting/laravel-setting)
 [![StyleCI](https://styleci.io/repos/101231817/shield?style=flat&branch=master)](https://styleci.io/repos/101231817)
-[![Quality](https://scrutinizer-ci.com/g/akaunting/laravel-setting/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/akaunting/laravel-setting)
 [![License](https://poser.pugx.org/akaunting/laravel-setting/license.svg)](LICENSE.md)
 
 This package allows you to save settings in a more persistent way. You can use the database and/or json file to save your settings. You can also override the Laravel config.
