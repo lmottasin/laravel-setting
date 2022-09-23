@@ -3,9 +3,9 @@
 namespace Akaunting\Setting;
 
 use Akaunting\Setting\Middleware\AutoSaveSetting;
-use Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Arr;
+use Illuminate\View\Compilers\BladeCompiler;
 
 class Provider extends ServiceProvider
 {
@@ -30,8 +30,10 @@ class Provider extends ServiceProvider
         $this->override();
 
         // Register blade directive
-        Blade::directive('setting', function ($expression) {
-            return "<?php echo setting($expression); ?>";
+        $this->callAfterResolving('blade.compiler', function (BladeCompiler $compiler) {
+            $compiler->directive('setting', function ($expression) {
+                return "<?php echo setting($expression); ?>";
+            });
         });
     }
 
