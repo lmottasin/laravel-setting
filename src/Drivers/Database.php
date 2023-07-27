@@ -42,7 +42,7 @@ class Database extends Driver
     /**
      * Keys which should be encrypt automatically.
      *
-     * @var string
+     * @var array
      */
     protected $encrypted_keys;
 
@@ -64,13 +64,13 @@ class Database extends Driver
      * @param \Illuminate\Database\Connection $connection
      * @param string $table
      */
-    public function __construct(Connection $connection, $table = null, $key = null, $value = null, $encrypted_keys = [])
+    public function __construct(Connection $connection, $table = null, $key = null, $value = null, array $encrypted_keys = [])
     {
         $this->connection = $connection;
         $this->table = $table ?: 'settings';
         $this->key = $key ?: 'key';
         $this->value = $value ?: 'value';
-        $this->encrypted_keys = $encrypted_keys ?: [];
+        $this->encrypted_keys = $encrypted_keys;
     }
 
     /**
