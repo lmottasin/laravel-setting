@@ -64,6 +64,28 @@ abstract class Driver
         return Arr::get($this->data, $key, $default);
     }
 
+     /**
+     * @param  array  $keys
+     * @param $default
+     * @return array|false
+     */
+    public function getKeys(array $keys, $default = null)
+    {
+        $keysWithValues = [];
+
+        foreach ($keys as $key) {
+            if (!$this->checkExtraColumns()) {
+                return false;
+            }
+
+            $this->load();
+
+            $keysWithValues[$key] = Arr::get($this->data, $key, $default);
+        }
+
+        return $keysWithValues;
+    }
+
     /**
      * Get the fallback value if default is null.
      *

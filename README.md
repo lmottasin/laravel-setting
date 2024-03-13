@@ -69,6 +69,7 @@ You can either use the helper method like `setting('foo')` or the facade `Settin
 ```php
 Setting::get('foo', 'default');
 Setting::get('nested.element');
+Setting::getKeys(['foo', 'bar']);
 Setting::set('foo', 'bar');
 Setting::forget('foo');
 $settings = Setting::all();
